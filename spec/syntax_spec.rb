@@ -17,6 +17,7 @@ describe Lifted::Rake::SyntaxTask do
 
     task.kind_of?(Rake::TaskLib).must_equal true
     task.name.must_equal :syntax
+    task.files.must_equal Dir['lib/**/*.rb']
   end
 
   it 'can have its name assigned' do
@@ -31,5 +32,13 @@ describe Lifted::Rake::SyntaxTask do
     end
 
     task.name.must_equal :foo
+  end
+
+  it 'can have its files assigned' do
+    task = Lifted::Rake::SyntaxTask.new do |t|
+      t.files = Dir['lib/*.rb']
+    end
+
+    task.files.must_equal Dir['lib/*.rb']
   end
 end
