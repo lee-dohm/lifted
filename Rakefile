@@ -4,6 +4,7 @@
 # Copyright:: Copyright (c) 2012 by Lifted Studios.  All Rights Reserved.
 # 
 
+require 'bundler/gem_tasks'
 require 'rake/clean'
 require 'rake/testtask'
 require 'yard'
